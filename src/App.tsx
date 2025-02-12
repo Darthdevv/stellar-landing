@@ -1,13 +1,24 @@
-import Navbar from "./components/Navbar";
-import ThemeSwitcher from "./components/ThemeSwitcher";
+
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { path: "/", index: true, element: <Home /> },
+        { path: "/about", index: true, element: <Home /> },
+      ],
+    },
+  ]);
+
   return (
     <>
-      <Navbar />
-      <Home />
-      <ThemeSwitcher />
+      <RouterProvider router={router} />
     </>
   );
 }

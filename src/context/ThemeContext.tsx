@@ -10,7 +10,7 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const storedTheme = (localStorage.getItem("theme") as Theme) || "light";
+  const storedTheme = (localStorage.getItem("theme") as Theme);
   const [theme, setThemeState] = useState<Theme>(storedTheme);
 
   const setTheme = (newTheme: Theme) => {
@@ -33,6 +33,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
