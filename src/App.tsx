@@ -1,9 +1,9 @@
 
 import MainLayout from "./layouts/MainLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/home";
-import About from "./pages/about";
 import NotFound from "./pages/NotFound";
+import Home  from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
 

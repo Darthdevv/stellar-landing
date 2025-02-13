@@ -1,35 +1,40 @@
+import { useTheme } from "../context/ThemeContext";
 
 
 const Home = () => {
+  const {  theme } = useTheme();
   return (
+    <section>
+      <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className={ theme === 'purple' ?`bg-gradient-to-r from-amber-200 via-amber-600 to-amber-900 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl` : `bg-gradient-to-r from-teal-200 via-teal-600 to-teal-900 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl`}>
+            Understand User Flow.
+            <span className="sm:block"> Increase Conversion. </span>
+          </h1>
 
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
-            <div>
-              <div className="max-w-lg md:max-w-none">
-                <h2 id="header" className="text-2xl font-semibold sm:text-3xl">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h2>
+          <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+            illo tenetur fuga ducimus numquam ea!
+          </p>
 
-                <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur doloremque saepe architecto maiores repudiandae amet
-                  perferendis repellendus, reprehenderit voluptas sequi.
-                </p>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              className="block w-full rounded-md btn-primary px-12 py-3 text-sm font-medium text-white  focus:ring-3 focus:outline-hidden sm:w-auto"
+              href="#"
+            >
+              Get Started
+            </a>
 
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                className="rounded"
-                alt=""
-              />
-            </div>
+            <a
+              className="block w-full rounded-md btn-outlined px-12 py-3 text-sm font-medium  focus:ring-3 focus:outline-hidden sm:w-auto"
+              href="#"
+            >
+              Learn More
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   );
 }
 
