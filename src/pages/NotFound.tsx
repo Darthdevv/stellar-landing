@@ -3,11 +3,17 @@
     Graphic from https://www.opendoodles.com/
 */
 }
+import { motion as m } from "framer-motion";
 
 const NotFound = () => {
   return (
     <div className="grid h-screen place-content-center px-4">
-      <div className="text-center">
+      <m.div
+        initial={{ y: 70, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="text-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1024 768"
@@ -28,11 +34,11 @@ const NotFound = () => {
         </svg>
 
         <h1 className="mt-6 text-2xl font-bold tracking-tight sm:text-4xl">
-          Uh-oh!
+          oops !
         </h1>
 
         <p className="mt-4">We can't find that page.</p>
-      </div>
+      </m.div>
     </div>
   );
 };
